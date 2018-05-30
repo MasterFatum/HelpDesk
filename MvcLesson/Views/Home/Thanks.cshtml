@@ -27,18 +27,18 @@
             WebMail.Password = "7JxW7ktNfb";
             WebMail.From = "help-desk@fckrasnodar.ru";
 
-            if (Model.Department == "Базовая школа")
-            {
-                WebMail.Send("i.panfilov@fckrasnodar.ru", "ЗАЯВКА ТЕХНИЧЕСКОЙ ПРОБЛЕМЫ",
-                    $"{Model.BodyEmail}");
-            }
-
-            else if (Model.Department == "Академия")
+            if (Model.Department == "Академия")
             {
                 WebMail.Send("master_fatum@hotmail.com", "ЗАЯВКА ТЕХНИЧЕСКОЙ ПРОБЛЕМЫ",
                     $"{Model.BodyEmail}");
             }
 
+            else if (Model.Department == "Базовая школа")
+            {
+                WebMail.Send("i.panfilov@fckrasnodar.ru", "ЗАЯВКА ТЕХНИЧЕСКОЙ ПРОБЛЕМЫ",
+                    $"{Model.BodyEmail}");
+            }
+            
             else if (Model.Department == "Футбольный клуб")
             {
                 WebMail.Send("i.panfilov@fckrasnodar.ru", "ЗАЯВКА ТЕХНИЧЕСКОЙ ПРОБЛЕМЫ",
