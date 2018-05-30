@@ -1,0 +1,74 @@
+﻿@model MvcLesson.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Форма заявки</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/Styles.css" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+</head>
+<body>
+<div class="panel-success">
+    <div class="panel-heading text-center">
+        <h4>Форма обращение HelpDesk</h4>
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+        <div class="form-group">
+            <label>Фамилия Имя Отчество:</label>
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label>Ваш адрес электронной почты (E-mail):</label>
+            @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label>Ваш контактный номер телефона:</label>
+            @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label>Ваш номер кабинета или название объекта:</label>
+            @Html.TextBoxFor(x => x.Location, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group")>
+            <label>Приоритет заявки:</label>
+            @Html.DropDownListFor(x => x.Priority, new[] {
+                new SelectListItem() { Text = "СРОЧНО", Value = Boolean.TrueString},
+                new SelectListItem() { Text = "НЕ СРОЧНО", Value = Boolean.FalseString}
+            }, "Выберите вариантттт", new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label>IT-отдел:</label>
+            @Html.DropDownListFor(x => x.Department, new[] {
+                new SelectListItem() { Text = "Академия"},
+                new SelectListItem() { Text = "Базовая школа"},
+                new SelectListItem() { Text = "Футбольный клуб"}
+            }, "Выберите вариант", new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label>Опишите проблему:</label>
+            @Html.TextBoxFor(x => x.BodyEmail, new { @class = "form-control" })
+        </div>
+        <div class="text-center">
+            <input type="submit" value="Отправить HelpDesk" class="btn btn-success" />
+        </div>
+}
+    </div>
+</div>
+</body>
+</html>

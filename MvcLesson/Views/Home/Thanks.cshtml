@@ -1,0 +1,58 @@
+﻿
+@model MvcLesson.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Отправка заявки</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <style>
+        body { background: #f1f1f1; }
+    </style>
+</head>
+<body>
+    @{
+        try
+        {
+            WebMail.SmtpServer = "mail.fckrasnodar.ru";
+            WebMail.SmtpPort = 25;
+            WebMail.EnableSsl = false;
+            WebMail.UserName = "help-desk@fckrasnodar.ru";
+            WebMail.Password = "7JxW7ktNfb";
+            WebMail.From = "help-desk@fckrasnodar.ru";
+
+            if (Model.Department == "Базовая школа")
+             {
+                 WebMail.Send("i.panfilov@fckrasnodar.ru", "ЗАЯВКА ТЕХНИЧЕСКОЙ ПРОБЛЕМЫ",
+                     $"{Model.BodyEmail}");
+             }
+
+        }
+        catch (Exception ex)
+        {
+            @:<b>К сожалению при отправке письма возникла ошибка.</b><br/>
+            @:<b>@ex.Message</b>
+            return;
+        }
+    }
+    <div class="text-center">
+        <h1>Спасибо, @Model.Name!</h1>
+        <div class="lead">
+            @if (Model.Priority == true)
+            {
+                @: Ваша заявка направлена в IT-отдел и в ближайшее время будет обработана! Спасибо!
+            }
+            else
+            {
+                @:Заявка не отправлена из-за непредвиденной ошибки!
+            }
+        </div>
+    </div>
+</body>
+</html>
