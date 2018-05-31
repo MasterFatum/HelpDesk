@@ -27,22 +27,40 @@
             WebMail.Password = "7JxW7ktNfb";
             WebMail.From = "help-desk@fckrasnodar.ru";
 
-            if (Model.Department == "Базовая школа")
+            if (Model.Department == "Базовая школа") //БАЗОВАЯ ШКОЛА
             {
                 WebMail.Send("i.panfilov@fckrasnodar.ru", "ЗАЯВКА ТЕХНИЧЕСКОЙ ПРОБЛЕМЫ",
-                    $"{Model.BodyEmail}");
+                    String.Format($"От кого: {Model.Name}\n" +
+                                  $"E-mail: {Model.Email}\n" +
+                                  $"Телефон: {Model.Phone}\n" +
+                                  $"Локация: {Model.Location}\n" +
+                                  $"Приоритет: {Model.Priority}\n" +
+                                  $"IT-отдел: {Model.Department}\n" +
+                                  $"Проблема: {Model.BodyEmail}"));
             }
 
-            else if (Model.Department == "Академия")
+            else if (Model.Department == "Академия") //АКАДЕМИЯ
             {
                 WebMail.Send("master_fatum@hotmail.com", "ЗАЯВКА ТЕХНИЧЕСКОЙ ПРОБЛЕМЫ",
-                    $"{Model.BodyEmail}");
+                    String.Format($"От кого: {Model.Name}\n" +
+                                  $"E-mail: {Model.Email}\n" +
+                                  $"Телефон: {Model.Phone}\n" +
+                                  $"Локация: {Model.Location}\n" +
+                                  $"Приоритет: {Model.Priority}\n" +
+                                  $"IT-отдел: {Model.Department}\n" +
+                                  $"Проблема: {Model.BodyEmail}"));
             }
 
-            else if (Model.Department == "Футбольный клуб")
+            else if (Model.Department == "Футбольный клуб") //ФУТБОЛЬНЫЙ КЛУБ
             {
                 WebMail.Send("i.panfilov@fckrasnodar.ru", "ЗАЯВКА ТЕХНИЧЕСКОЙ ПРОБЛЕМЫ",
-                    $"{Model.BodyEmail}");
+                    String.Format($"От кого: {Model.Name}\n" +
+                                  $"E-mail: {Model.Email}\n" +
+                                  $"Телефон: {Model.Phone}\n" +
+                                  $"Локация: {Model.Location}\n" +
+                                  $"Приоритет: {Model.Priority}\n" +
+                                  $"IT-отдел: {Model.Department}\n" +
+                                  $"Проблема: {Model.BodyEmail}"));
             }
 
         }

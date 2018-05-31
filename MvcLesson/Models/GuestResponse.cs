@@ -8,6 +8,8 @@ namespace MvcLesson.Models
 {
     public class GuestResponse
     {
+        public int Id { get; set; }
+
         [Required(ErrorMessage = "Введите своё имя")]
         public string Name { get; set; }
 
