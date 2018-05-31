@@ -9,6 +9,7 @@ namespace MvcLesson.Controllers
 {
     public class HomeController : Controller
     {
+        Random random = new Random();
 
         public ViewResult Index()
         {

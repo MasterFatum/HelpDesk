@@ -2,6 +2,7 @@
 
 @{
     Layout = null;
+    Random random = new Random();
 }
 
 <!DOCTYPE html>
@@ -25,7 +26,7 @@
         @Html.ValidationSummary()
         <div class="form-group" align="center">
             <label>ID заявки:</label>
-            @Html.TextBoxFor(x => x.Id, new { @class = "form-control", style = "width:500px", disabled = true})
+            @Html.TextBoxFor(x => x.Id, new { @class = "form-control", style = "width:500px", disabled = false })
         </div>
 
         <div class="form-group" align="center">
