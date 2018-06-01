@@ -9,12 +9,15 @@ namespace MvcLesson.Controllers
 {
     public class HomeController : Controller
     {
-        Random random = new Random();
-
-        public ViewResult Index()
+     public ViewResult Index()
         {
             int hour = DateTime.Now.Hour;
             ViewBag.Greeting = hour < 12 ? "Доброе утро!" : "Добрый день!";
+            return View();
+        }
+
+        public ViewResult Administrator()
+        {
             return View();
         }
 
