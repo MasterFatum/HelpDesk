@@ -6,9 +6,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MvcLesson.Models
 {
-    public class GuestResponse
+    public class HelpDeskRequest
     {
-        public Guid Id { get; set; }
+        public Guid HelpDeskId { get; set; }
 
         [Required(ErrorMessage = "Введите своё имя")]
         public string UserName { get; set; }
@@ -23,7 +23,7 @@ namespace MvcLesson.Models
         [Required(ErrorMessage = "Введите номер кабинета")]
         public string UserLocation { get; set; }
 
-        [Required(ErrorMessage = "Выберите приоритет")]
+        [Required(ErrorMessage = "Выберите приоритет заявки")]
         public bool? Priority { get; set; }
 
         [Required(ErrorMessage = "Выберите IT-отдел")]

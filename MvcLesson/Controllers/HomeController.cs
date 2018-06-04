@@ -28,11 +28,11 @@ namespace MvcLesson.Controllers
         }
 
         [HttpPost]
-        public ViewResult HelpDeskForm(GuestResponse guest)
+        public ViewResult HelpDeskForm(HelpDeskRequest helpDesk)
         {
             if (ModelState.IsValid)
             {
-                return View("Thanks", guest);
+                return View("Thanks", helpDesk);
             }
             else
             {

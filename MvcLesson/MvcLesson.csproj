@@ -112,8 +112,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\GuestResponse.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\HelpDeskRequest.cs" />
+    <Compile Include="Models\AdminUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

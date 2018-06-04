@@ -1,5 +1,5 @@
 ﻿
-@model MvcLesson.Models.GuestResponse
+@model MvcLesson.Models.HelpDeskRequest
 
 @{
     Layout = null;
@@ -30,10 +30,10 @@
             if (Model.Department == "Базовая школа") //БАЗОВАЯ ШКОЛА
             {
                 WebMail.Send("i.panfilov@fckrasnodar.ru", "ЗАЯВКА ТЕХНИЧЕСКОЙ ПРОБЛЕМЫ",
-                    String.Format($"От кого: {Model.Name}\n" +
-                                  $"E-mail: {Model.Email}\n" +
-                                  $"Телефон: {Model.Phone}\n" +
-                                  $"Локация: {Model.Location}\n" +
+                    String.Format($"От кого: {Model.UserName}\n" +
+                                  $"E-mail: {Model.UserEmail}\n" +
+                                  $"Телефон: {Model.UserPhone}\n" +
+                                  $"Локация: {Model.UserLocation}\n" +
                                   $"Приоритет: {Model.Priority}\n" +
                                   $"IT-отдел: {Model.Department}\n" +
                                   $"Проблема: {Model.BodyEmail}"));
@@ -42,10 +42,10 @@
             else if (Model.Department == "Академия") //АКАДЕМИЯ
             {
                 WebMail.Send("master_fatum@hotmail.com", "ЗАЯВКА ТЕХНИЧЕСКОЙ ПРОБЛЕМЫ",
-                    String.Format($"От кого: {Model.Name}\n" +
-                                  $"E-mail: {Model.Email}\n" +
-                                  $"Телефон: {Model.Phone}\n" +
-                                  $"Локация: {Model.Location}\n" +
+                    String.Format($"От кого: {Model.UserName}\n" +
+                                  $"E-mail: {Model.UserEmail}\n" +
+                                  $"Телефон: {Model.UserPhone}\n" +
+                                  $"Локация: {Model.UserLocation}\n" +
                                   $"Приоритет: {Model.Priority}\n" +
                                   $"IT-отдел: {Model.Department}\n" +
                                   $"Проблема: {Model.BodyEmail}"));
@@ -54,10 +54,10 @@
             else if (Model.Department == "Футбольный клуб") //ФУТБОЛЬНЫЙ КЛУБ
             {
                 WebMail.Send("i.panfilov@fckrasnodar.ru", "ЗАЯВКА ТЕХНИЧЕСКОЙ ПРОБЛЕМЫ",
-                    String.Format($"От кого: {Model.Name}\n" +
-                                  $"E-mail: {Model.Email}\n" +
-                                  $"Телефон: {Model.Phone}\n" +
-                                  $"Локация: {Model.Location}\n" +
+                    String.Format($"От кого: {Model.UserName}\n" +
+                                  $"E-mail: {Model.UserEmail}\n" +
+                                  $"Телефон: {Model.UserPhone}\n" +
+                                  $"Локация: {Model.UserLocation}\n" +
                                   $"Приоритет: {Model.Priority}\n" +
                                   $"IT-отдел: {Model.Department}\n" +
                                   $"Проблема: {Model.BodyEmail}"));
@@ -72,7 +72,7 @@
         }
     }
     <div class="text-center">
-        <h1>Спасибо, @Model.Name!</h1>
+        <h1>Спасибо, @Model.UserName!</h1>
         <div class="lead">
             @if (Model.Priority == true)
             {
