@@ -8,20 +8,20 @@ namespace MvcLesson.Models
 {
     public class GuestResponse
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Required(ErrorMessage = "Введите своё имя")]
-        public string Name { get; set; }
+        public string UserName { get; set; }
 
         [Required(ErrorMessage = "Введите e-mail")]
         [RegularExpression(".+\\@.+\\..+", ErrorMessage = "Вы ввели некорректный Email")]
-        public string Email { get; set; }
+        public string UserEmail { get; set; }
 
         [Required(ErrorMessage = "Введите номер телефона")]
-        public string Phone { get; set; }
+        public string UserPhone { get; set; }
 
         [Required(ErrorMessage = "Введите номер кабинета")]
-        public string Location { get; set; }
+        public string UserLocation { get; set; }
 
         [Required(ErrorMessage = "Выберите приоритет")]
         public bool? Priority { get; set; }
