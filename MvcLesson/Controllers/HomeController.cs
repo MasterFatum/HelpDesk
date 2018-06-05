@@ -16,7 +16,7 @@ namespace MvcLesson.Controllers
             return View();
         }
 
-        public ViewResult Administrator()
+        public ViewResult Admin()
         {
             return View();
         }
