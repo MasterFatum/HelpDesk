@@ -28,7 +28,7 @@ namespace MvcLesson.Controllers
         [HttpPost]
         public string RegisterAdmin(Admin admin)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && admin.UserPassword == admin.ConfirmPassword)
             {
                 return "Новый администратор успешно зарегистрирован!";
             }

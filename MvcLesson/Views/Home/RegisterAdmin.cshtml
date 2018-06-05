@@ -40,17 +40,17 @@
                 @Html.TextBoxFor(x => x.UserPassword, new { @class = "form-control", style = "width:500px" })
             </div>
 
-            @*<div class="form-group" align="center">
+            <div class="form-group" align="center">
                 <label>Повторите пароль:</label>
-                @Html.TextBoxFor(x => x.UserPassword, new { @class = "form-control", style = "width:500px" })
-            </div>*@
+                @Html.TextBoxFor(x => x.ConfirmPassword, new { @class = "form-control", style = "width:500px" })
+            </div>
 
             <div class="form-group" align="center">
                 <label>Выберите IT-отдел:</label>
                 @Html.DropDownListFor(x => x.DepartmentId, new[] {
-                    new SelectListItem() { Text = "Академия"},
-                    new SelectListItem() { Text = "Школа"},
-                    new SelectListItem() { Text = "Футбольный клуб"}
+                    new SelectListItem() { Text = "Академия" },
+                    new SelectListItem() { Text = "Школа" },
+                    new SelectListItem() { Text = "Футбольный клуб" }
                 }, "Выберите вариант", new { @class = "form-control", style = "width:500px" })
             </div>
 
