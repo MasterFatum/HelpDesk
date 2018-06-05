@@ -11,8 +11,6 @@ namespace MvcLesson.Controllers
     {
      public ViewResult Index()
         {
-            int hour = DateTime.Now.Hour;
-            ViewBag.Greeting = hour < 12 ? "Доброе утро!" : "Добрый день!";
             return View();
         }
 
