@@ -20,6 +20,22 @@ namespace MvcLesson.Controllers
         }
 
         [HttpGet]
+        public ViewResult RegisterAdmin()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public string RegisterAdmin(Admin admin)
+        {
+            if (ModelState.IsValid)
+            {
+                return "Новый администратор успешно зарегистрирован!";
+            }
+            return "Регистрация прошла с ошибкой. Администратор не зарегистрирован!";
+        }
+
+        [HttpGet]
         public ViewResult HelpDeskForm()
         {
             ViewBag.ID = Guid.NewGuid();
