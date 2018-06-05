@@ -27,40 +27,40 @@
             WebMail.Password = "7JxW7ktNfb";
             WebMail.From = "help-desk@fckrasnodar.ru";
 
-            if (Model.Department == "Базовая школа") //БАЗОВАЯ ШКОЛА
+            if (Model.Department == "Школа") // ШКОЛА
             {
                 WebMail.Send("i.panfilov@fckrasnodar.ru", "ЗАЯВКА ТЕХНИЧЕСКОЙ ПРОБЛЕМЫ",
-                    String.Format($"От кого: {Model.UserName}\n" +
-                                  $"E-mail: {Model.UserEmail}\n" +
-                                  $"Телефон: {Model.UserPhone}\n" +
-                                  $"Локация: {Model.UserLocation}\n" +
-                                  $"Приоритет: {Model.Priority}\n" +
-                                  $"IT-отдел: {Model.Department}\n" +
-                                  $"Проблема: {Model.BodyEmail}"));
+                    String.Format($"ОТ КОГО: {Model.UserName}; " +
+                                  $"E-MAIL: {Model.UserEmail}; " +
+                                  $"ТЕЛЕФОН: {Model.UserPhone}; " +
+                                  $"ЛОКАЦИЯ: {Model.UserLocation}; " +
+                                  $"ПРИОРИТЕТ: {Model.Priority}; " +
+                                  $"IT-ОТДЕЛ: {Model.Department}; " +
+                                  $"ПРОБЛЕМА: {Model.BodyEmail}; "));
             }
 
             else if (Model.Department == "Академия") //АКАДЕМИЯ
             {
                 WebMail.Send("master_fatum@hotmail.com", "ЗАЯВКА ТЕХНИЧЕСКОЙ ПРОБЛЕМЫ",
-                    String.Format($"От кого: {Model.UserName}\n" +
-                                  $"E-mail: {Model.UserEmail}\n" +
-                                  $"Телефон: {Model.UserPhone}\n" +
-                                  $"Локация: {Model.UserLocation}\n" +
-                                  $"Приоритет: {Model.Priority}\n" +
-                                  $"IT-отдел: {Model.Department}\n" +
-                                  $"Проблема: {Model.BodyEmail}"));
+                    String.Format($"ОТ КОГО: {Model.UserName}; " +
+                                  $"E-MAIL: {Model.UserEmail}; " +
+                                  $"ТЕЛЕФОН: {Model.UserPhone}; " +
+                                  $"ЛОКАЦИЯ: {Model.UserLocation}; " +
+                                  $"ПРИОРИТЕТ: {Model.Priority}; " +
+                                  $"IT-ОТДЕЛ: {Model.Department}; " +
+                                  $"ПРОБЛЕМА: {Model.BodyEmail}; "));
             }
 
             else if (Model.Department == "Футбольный клуб") //ФУТБОЛЬНЫЙ КЛУБ
             {
                 WebMail.Send("i.panfilov@fckrasnodar.ru", "ЗАЯВКА ТЕХНИЧЕСКОЙ ПРОБЛЕМЫ",
-                    String.Format($"От кого: {Model.UserName}\n" +
-                                  $"E-mail: {Model.UserEmail}\n" +
-                                  $"Телефон: {Model.UserPhone}\n" +
-                                  $"Локация: {Model.UserLocation}\n" +
-                                  $"Приоритет: {Model.Priority}\n" +
-                                  $"IT-отдел: {Model.Department}\n" +
-                                  $"Проблема: {Model.BodyEmail}"));
+                    String.Format($"От кого: {Model.UserName}; " +
+                                  $"E-mail: {Model.UserEmail}; " +
+                                  $"Телефон: {Model.UserPhone}; " +
+                                  $"Локация: {Model.UserLocation}; " +
+                                  $"Приоритет: {Model.Priority}; " +
+                                  $"IT-отдел: {Model.Department}; " +
+                                  $"Проблема: {Model.BodyEmail}; "));
             }
 
         }
