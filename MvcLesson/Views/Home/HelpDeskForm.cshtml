@@ -27,7 +27,7 @@
         @Html.ValidationSummary()
         <div class="form-group" align="center">
             <label>ID заявки:</label>
-            @Html.TextBoxFor(x => x.HelpDeskId, new { @class = "form-control", style = "width:500px", disabled = true })
+            <input type="text" name="@Html.NameFor(m => m.HelpDeskId)" value="@ViewBag.ID" class="form-control" style="width:295px" disabled="disabled"/>
         </div>
 
         <div class="form-group" align="center">

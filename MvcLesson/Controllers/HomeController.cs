@@ -22,6 +22,7 @@ namespace MvcLesson.Controllers
         [HttpGet]
         public ViewResult HelpDeskForm()
         {
+            ViewBag.ID = Guid.NewGuid();
             return View();
         }
 
