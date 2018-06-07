@@ -5,7 +5,7 @@ using System.Web;
 
 namespace MvcLesson.Models
 {
-    public class RegistrationAdmin
+    public class RegistrationViewModel
     {
         public int? UserId { get; set; }
         public string UserName { get; set; }

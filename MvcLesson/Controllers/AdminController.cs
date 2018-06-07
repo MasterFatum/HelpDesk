@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using MvcLesson.Models;
 
 namespace MvcLesson.Controllers
@@ -10,7 +11,24 @@ namespace MvcLesson.Controllers
     public class AdminController : Controller
     {
 
-        public ViewResult AdminPanel()
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(LoginViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                FormsAuthentication.SetAuthCookie(model.AdminName, false);
+
+                return RedirectToAction("");
+            }
+            return View();
+        }
+
+        public ViewResult Panel()
         {
             return View();
         }
@@ -22,7 +40,7 @@ namespace MvcLesson.Controllers
         }
 
         [HttpPost]
-        public string AdminRegistration(RegistrationAdmin admin)
+        public string AdminRegistration(RegistrationViewModel admin)
         {
             if (ModelState.IsValid)
             {

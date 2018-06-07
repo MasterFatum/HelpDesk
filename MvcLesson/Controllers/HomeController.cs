@@ -15,21 +15,10 @@ namespace MvcLesson.Controllers
             return View();
         }
 
-        public ActionResult Login()
+        
+        public ActionResult RedirectToLoginPage()
         {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult Login(LoginViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                FormsAuthentication.SetAuthCookie(model.UserName, false);
-
-                return RedirectToAction("");
-            }
-            return View();
+            return Redirect("/Admin/Login");
         }
 
         [HttpGet]

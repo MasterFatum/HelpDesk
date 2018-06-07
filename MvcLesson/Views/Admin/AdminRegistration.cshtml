@@ -1,4 +1,4 @@
-﻿@model MvcLesson.Models.RegistrationAdmin
+﻿@model MvcLesson.Models.RegistrationViewModel
 
 @{
     Layout = null;
@@ -17,8 +17,6 @@
 <body>
 <div class="panel-success">
     <div class="panel-heading text-center">
-        <h4>@Html.ActionLink("На главную страницу", "")</h4>
-        <h3>Форма обращение HelpDesk</h3>
     </div>
     <div class="panel-body">
         @using (Html.BeginForm())
@@ -38,11 +36,6 @@
             <div class="form-group" align="center">
                 <label>Введите пароль:</label>
                 @Html.TextBoxFor(x => x.UserPassword, new { @class = "form-control", style = "width:500px" })
-            </div>
-
-            <div class="form-group" align="center">
-                <label>Повторите пароль:</label>
-                @Html.TextBoxFor(x => x.ConfirmPassword, new { @class = "form-control", style = "width:500px" })
             </div>
 
             <div class="form-group" align="center">
