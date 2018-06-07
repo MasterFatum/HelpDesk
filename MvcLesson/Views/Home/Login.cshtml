@@ -1,4 +1,4 @@
-﻿@model MvcLesson.Models.Admin
+﻿@model MvcLesson.Models.RegistrationAdmin
 
 @{
     Layout = null;
@@ -19,7 +19,6 @@
             text-decoration: none;
 
         }
-
         body {
             background-color: #F1F1F1;
         }
@@ -41,7 +40,7 @@
 
             <div class="form-group" align="center">
                 <label>Пароль:</label>
-                @Html.TextBoxFor(x => x.UserPassword, new { @class = "form-control", style = "width:500px" })
+                @Html.EditorFor(x => x.UserPassword, new { @class = "form-control", style = "width:500px" })
             </div>
 
             <div class="text-center">

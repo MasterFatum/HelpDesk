@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using MvcLesson.Models;
 
 namespace MvcLesson.Controllers
@@ -14,25 +15,21 @@ namespace MvcLesson.Controllers
             return View();
         }
 
-        public ViewResult Admin()
-        {
-            return View();
-        }
-
-        [HttpGet]
-        public ViewResult RegisterAdmin()
+        public ActionResult Login()
         {
             return View();
         }
 
         [HttpPost]
-        public string RegisterAdmin(Admin admin)
+        public ActionResult Login(LoginViewModel model)
         {
-            if (ModelState.IsValid && admin.UserPassword == admin.ConfirmPassword)
+            if (ModelState.IsValid)
             {
-                return "Новый администратор успешно зарегистрирован!";
+                FormsAuthentication.SetAuthCookie(model.UserName, false);
+
+                return RedirectToAction("");
             }
-            return "Регистрация прошла с ошибкой. Администратор не зарегистрирован!";
+            return View();
         }
 
         [HttpGet]
