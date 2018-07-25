@@ -1,0 +1,66 @@
+﻿@model MvcLesson.Models.RegistrationViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Регистрация администратора</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/Styles.css" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+</head>
+<body>
+<div class="panel-success">
+    <div class="panel-heading text-center">
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+
+        <div class="form-group" align="center">
+            <label>Введите имя пользователя:</label>
+            @Html.TextBoxFor(x => x.UserName, new { @class = "form-control", style = "width:500px" })
+            @Html.ValidationMessageFor(x => x.UserName)
+        </div>
+
+        <div class="form-group" align="center">
+            <label>Ведите ваш E-mail:</label>
+            @Html.TextBoxFor(x => x.Email, new { @class = "form-control", style = "width:500px" })
+            @Html.ValidationMessageFor(x => x.Email)
+        </div>
+
+        <div class="form-group" align="center">
+            <label>Введите пароль:</label>
+            @Html.EditorFor(x => x.UserPassword, new { @class = "form-control", style = "width:500px" })
+            @Html.ValidationMessageFor(x => x.UserPassword)
+        </div>
+
+        <div class="form-group" align="center">
+            <label>Повторите пароль:</label>
+            @Html.EditorFor(x => x.UserPassword, new { @class = "form-control", style = "width:500px" })
+            @Html.ValidationMessageFor(x => x.UserPassword)
+        </div>
+
+        <div class="form-group" align="center">
+            <label>Выберите IT-отдел:</label>
+            @Html.DropDownListFor(x => x.DepartmentId, new[] {
+            new SelectListItem() { Text = "Академия" },
+            new SelectListItem() { Text = "Школа" },
+            new SelectListItem() { Text = "Футбольный клуб" }
+        }, "Выберите вариант", new { @class = "form-control", style = "width:500px" })
+        </div>
+
+        <div class="text-center">
+            <input type="submit" value="Зарегистрировать" class="btn btn-success" style="font-size: large" />
+        </div>
+}
+    </div>
+</div>
+</body>
+</html>

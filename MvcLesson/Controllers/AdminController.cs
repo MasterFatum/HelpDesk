@@ -23,7 +23,7 @@ namespace MvcLesson.Controllers
             {
                 FormsAuthentication.SetAuthCookie(model.AdminName, false);
 
-                return RedirectToAction("");
+                return RedirectToAction("Panel");
             }
             return View();
         }
@@ -34,19 +34,25 @@ namespace MvcLesson.Controllers
         }
 
         [HttpGet]
-        public ViewResult AdminRegistration()
+        public ViewResult Registration()
         {
             return View();
         }
 
         [HttpPost]
-        public string AdminRegistration(RegistrationViewModel admin)
+        public string Registration(RegistrationViewModel admin)
         {
             if (ModelState.IsValid)
             {
                 return "Новый администратор успешно зарегистрирован!";
             }
             return "Регистрация прошла с ошибкой. Администратор не зарегистрирован!";
+        }
+
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login");
         }
     }
 }
